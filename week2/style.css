@@ -70,8 +70,8 @@ nav a:hover {
     background-color: #505050;  /* Darker shade for hover */
 }
 
-nav-link:active {
-  background-color: #f00;
+.nav-link:active {
+  background-color: #0000FF;
 }
 
 /* Banner Styles */
