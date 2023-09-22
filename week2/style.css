@@ -5,9 +5,13 @@ body {
     font-family: 'Open Sans', sans-serif;
     color: #505050;
 }
+body {
+  font-family: 'Open Sans', sans-serif;
+}
 h1, p {
   font-family: 'Open Sans', sans-serif;
 }
+
 /* Header Styles */
 
 header {
