@@ -69,6 +69,10 @@ nav a:hover {
     background-color: #505050;  /* Darker shade for hover */
 }
 
+nav .point {
+  color: #000000;
+}
+
 
 /* Banner Styles */
 .banner-container {
