@@ -169,6 +169,9 @@ h4 {
     background-color: #282689;
     margin-top: 40px;
     border: 1px solid #000000;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 600;
 }
 
 .cta-button {
