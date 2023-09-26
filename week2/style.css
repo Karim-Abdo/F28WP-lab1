@@ -151,11 +151,22 @@ main h3 {
 }
 
 /* Call to Action Styles */
+h4 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
 .cta-container {
     text-align: center;
     padding: 20px;
     background-color: #282689;
     margin-top: 30px;
+    border: 1px #333;
 }
 
 .cta-button {
