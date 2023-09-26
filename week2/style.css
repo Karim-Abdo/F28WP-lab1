@@ -160,7 +160,7 @@ h4 {
     margin-inline-end: 0px;
     font-weight: bold;
     color: #ffffff
-    text-decoration: underline black dashed double;
+    text-decoration: underline #000000;
 }
 
 .cta-container {
