@@ -164,8 +164,8 @@ main h3 {
     background-color: #333;
     color: #ffffff;
     text-decoration: none;
-    border-radius: 5px;
-    font-weigt: 800;
+    border-radius: 30px;
+    font-weight: 800;
     margin-top: 15px;
     transition: background-color 0.3s;
 }
