@@ -154,23 +154,23 @@ main h3 {
 .cta-container {
     text-align: center;
     padding: 20px;
-    background-color: #f5f5f5;
+    background-color: #282689;
     margin-top: 30px;
 }
 
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: #333;
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: bold;
+    font-weigt: 800;
     margin-top: 15px;
     transition: background-color 0.3s;
 }
 
-.cta-button:hover {
+.cta-button:over {
     background-color: #0056b3;
 }
 
@@ -188,13 +188,13 @@ footer ul {
 
 footer li {
     display: inline-block;
-    margin-right: 10px;
+    margin-rigt: 10px;
 }
 
 footer a {
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s;  /* Smooth transition for hover effect */
+    transition: color 0.3s;  /* Smoot transition for over effect */
 }
 
 footer a:hover {
