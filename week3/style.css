@@ -141,8 +141,12 @@ main h3 {
 box-sizing: border-box;
 }
 
+.slideshow-img {
+vertical-align: middle;
+width: 100%;
+}
+
 .mySlide img {
-    vertical-align: middle;
     width: 100%;
   }
 
