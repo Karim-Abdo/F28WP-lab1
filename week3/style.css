@@ -217,7 +217,7 @@ main h3 {
 
 
 #radio2:checked ~.second{
-    margin-left: -10%;
+    margin-left: 0;
 }
 
 
