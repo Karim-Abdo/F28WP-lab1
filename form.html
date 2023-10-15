@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--CSS code for the form-->
+  <style>
+    #form {
+      width: 300px;
+      margin: 20vh auto 0 auto;
+      padding: 20px;
+      background-color: whitesmoke;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    #form h1 {
+      color: #0f2027;
+      text-align: center;
+    }
+
+    #form button {
+      padding: 10px;
+      margin-top: 10px;
+      width: 100%;
+      color: white;
+      background-color: rgb(41, 57, 194);
+      border: none;
+      border-radius: 4px;
+    }
+
+    .input-control {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-control input {
+      border: 2px solid #f0f0f0;
+      border-radius: 4px;
+      display: block;
+      font-size: 12px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .input-control input:focus {
+      outline: 0;
+    }
+
+    .input-control.success input {
+      border-color: #09c372;
+    }
+
+    .input-control.error input {
+      border-color: #ff3860;
+    }
+
+    .input-control .error {
+      color: #ff3860;
+      font-size: 9px;
+      height: 13px;
+    }
+  </style>
+
+  <!--HTML code to set up the text fields and the submit button for the form-->
+</head>
+<body>
+  <form id="form" action="#">
+    <h1>Registration Form</h1>
+    <div class="input-control">
+      <label for="username">Username:</label>
+      <input type="text" placeholder="Enter your username" id="username" name="username" required>
+      <div class="error" id="username-error"></div>
+    </div>
+
+    <div class="input-control">
+      <label for="email">Email:</label>
+      <input type="email" placeholder="user@example.com" id="email" name="email" required>
+      <div class="error" id="email-error"></div>
+    </div>
+
+    <div class="input-control">
+      <label for="password">Password:</label>
+      <input type="password" placeholder="Enter your password" id="password" name="password" required>
+      <div class="error" id="password-error"></div>
+    </div>
+
+    <div class="input-control">
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" placeholder="Renter your password" id="confirm-password" name="confirm-password" required>
+      <div class="error" id="confirm-password-error"></div>
+    </div>
+
+    <button type="submit" id="submit-button">Submit</button>
+  </form>
+  
+<!--JS code for the fuctionality of the form-->
+  <script>
+    const form = document.getElementById("form");
+    const username = document.getElementById("username");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirm-password");
+    const usernameError = document.getElementById("username-error");
+    const emailError = document.getElementById("email-error");
+    const passwordError = document.getElementById("password-error");
+    const confirmPasswordError = document.getElementById("confirm-password-error");
+
+    function validateUsername() {
+      if (username.value.trim() === "") {
+        usernameError.textContent = "Username cannot be empty";
+        username.classList.add("error");
+        username.classList.remove("success");
+        return false;
+      } else {
+        usernameError.textContent = "";
+        username.classList.remove("error");
+        username.classList.add("success");
+        return true;
+      }
+    }
+
+    function validateEmail() {
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      if (email.value.trim() === "") {
+        emailError.textContent = "Email cannot be empty";
+        email.classList.add("error");
+        email.classList.remove("success");
+        return false;
+      } else if (!emailPattern.test(email.value)) {
+        emailError.textContent = "Invalid email format";
+        email.classList.add("error");
+        email.classList.remove("success");
+        return false;
+      } else {
+        emailError.textContent = "";
+        email.classList.remove("error");
+        email.classList.add("success");
+        return true;
+      }
+    }
+
+    function validatePassword() {
+      if (password.value.trim() === "") {
+        passwordError.textContent = "Password cannot be empty";
+        password.classList.add("error");
+        password.classList.remove("success");
+        return false;
+      } else if (password.value.length < 8) {
+        passwordError.textContent = "Password must be at least 8 characters";
+        password.classList.add("error");
+        password.classList.remove("success");
+        return false;
+      } else {
+        passwordError.textContent = "";
+        password.classList.remove("error");
+        password.classList.add("success");
+        return true;
+      }
+    }
+
+    function validateConfirmPassword() {
+      if (confirmPassword.value.trim() === "") {
+        confirmPasswordError.textContent = "Confirm Password cannot be empty";
+        confirmPassword.classList.add("error");
+        confirmPassword.classList.remove("success");
+        return false;
+      } else if (confirmPassword.value !== password.value) {
+        confirmPasswordError.textContent = "Passwords do not match";
+        confirmPassword.classList.add("error");
+        confirmPassword.classList.remove("success");
+        return false;
+      } else {
+        confirmPasswordError.textContent = "";
+        confirmPassword.classList.remove("error");
+        confirmPassword.classList.add("success");
+        return true;
+      }
+    }
+
+    function validateForm() {
+      const isUsernameValid = validateUsername();
+      const isEmailValid = validateEmail();
+      const isPasswordValid = validatePassword();
+      const isConfirmPasswordValid = validateConfirmPassword();
+
+      return isUsernameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid;
+    }
+
+    form.addEventListener("submit", function (e) {
+      if (!validateForm()) {
+        e.preventDefault();
+      }
+    });
+
+    username.addEventListener("blur", validateUsername);
+    email.addEventListener("blur", validateEmail);
+    password.addEventListener("blur", validatePassword);
+    confirmPassword.addEventListener("blur", validateConfirmPassword);
+  </script>
+</body>
+</html>
