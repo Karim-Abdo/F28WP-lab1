@@ -47,9 +47,5 @@ searchButton.addEventListener('click', () => {
     .catch((error) => {
       weatherInfo.textContent = `Error: ${error.message}`;
     });
-});
 
-fetchWeatherData('Dubai'); 
-fetchWeatherData('Abu Dhabi');
-fetchWeatherData('Ajman'); 
 
