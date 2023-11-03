@@ -33,6 +33,9 @@ searchButton.addEventListener('click', () => {
       const temperatureKelvin = data.main.temp;
       const windSpeed = data.wind.speed;
 
+      // Get the city name
+      const cityName = data.name;
+
       // Convert temperature from Kelvin to Celsius
       const temperatureCelsius = temperatureKelvin - 273.15;
 
@@ -45,5 +48,11 @@ searchButton.addEventListener('click', () => {
     .catch((error) => {
       weatherInfo.textContent = `Error: ${error.message}`;
     });
+});
+
+fetchWeatherData('Dubai'); 
+fetchWeatherData('Abu Dhabi');
+fetchWeatherData('Ajman'); 
+
 
 
