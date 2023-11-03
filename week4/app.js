@@ -30,12 +30,15 @@ searchButton.addEventListener('click', () => {
     .then((data) => {
       // Step 7: Update the weather info div with the weather details
       const weatherDescription = data.weather[0].description;
-      const temperatureCelsius = data.main.temp;
+      const temperatureKelvin = data.main.temp;
       const windSpeed = data.wind.speed;
+
+      // Convert temperature from Kelvin to Celsius
+      const temperatureCelsius = temperatureKelvin - 273.15;
 
       weatherInfo.innerHTML = `
         <p>Weather Description: ${weatherDescription}</p>
-        <p>Temperature: ${temperatureCelsius} °C</p>
+        <p>Temperature: ${temperatureCelsius.toFixed(2)} °C</p>
         <p>Wind Speed: ${windSpeed} m/s</p>
       `;
     })
