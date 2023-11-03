@@ -37,9 +37,8 @@ searchButton.addEventListener('click', () => {
       const temperatureCelsius = temperatureKelvin - 273.15;
 
       weatherInfo.innerHTML = `
-        <p>Weather Description: ${weatherDescription}</p>
-        <p>Temperature: ${temperatureCelsius.toFixed(2)} °C</p>
-        <p>Wind Speed: ${windSpeed} m/s</p>
+         <p>The weather in ${weatherDescription}</p>
+         <p>The temperature is ${temperatureCelsius.toFixed(2)}°C with a wind Speed of ${windSpeed}m/s</p>
       `;
     })
     .catch((error) => {
