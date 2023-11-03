@@ -36,8 +36,6 @@ searchButton.addEventListener('click', () => {
       // Convert temperature from Kelvin to Celsius
       const temperatureCelsius = temperatureKelvin - 273.15;
 
-      // Get the city name
-      const cityName = data.name;
 
       weatherInfo.innerHTML = `
          <p>The weather in ${cityName} is ${weatherDescription}</p>
