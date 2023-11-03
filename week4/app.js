@@ -49,4 +49,4 @@ searchButton.addEventListener('click', () => {
 fetchWeatherData('Dubai'); 
 fetchWeatherData('Abu Dhabi');
 fetchWeatherData('Ajman'); 
-fetchWeatherData('Sharjah');
+
