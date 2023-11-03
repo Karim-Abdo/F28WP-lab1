@@ -33,6 +33,9 @@ searchButton.addEventListener('click', () => {
       const temperature = data.main.temp;
       const windSpeed = data.wind.speed;
 
+      // Convert temperature from Kelvin to Celsius
+      const temperatureCelsius = temperatureKelvin - 273.15;
+
       weatherInfo.innerHTML = `
         <p>Weather Description: ${weatherDescription}</p>
         <p>Temperature: ${temperature} K</p>
