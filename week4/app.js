@@ -35,7 +35,7 @@ searchButton.addEventListener('click', () => {
 
       weatherInfo.innerHTML = `
         <p>Weather Description: ${weatherDescription}</p>
-        <p>Temperature: ${temperature} K</p>
+        <p>Temperature: ${temperatureCelsius} °C</p>
         <p>Wind Speed: ${windSpeed} m/s</p>
       `;
     })
