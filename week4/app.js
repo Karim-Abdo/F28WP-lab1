@@ -40,7 +40,7 @@ searchButton.addEventListener('click', () => {
       const cityName = data.name;
 
       weatherInfo.innerHTML = `
-         <p>The weather in ${cityName} ${weatherDescription}</p>
+         <p>The weather in ${cityName} is ${weatherDescription}</p>
          <p>The temperature is ${temperatureCelsius.toFixed(2)}°C with a wind Speed of ${windSpeed}m/s</p>
       `;
     })
