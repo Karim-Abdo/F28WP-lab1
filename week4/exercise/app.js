@@ -1,14 +1,14 @@
-// Step 1: Get your API key from OpenWeatherMap
+// Step 1:
 const API_KEY = '3781176cc9bdb36ad05bcf7ef18b5779';
 
-// Step 2: Create variables to store references to your input field, button, and weather info div.
+// Step 2:
 const cityInput = document.getElementById('cityInput');
 const searchButton = document.getElementById('btn');
 const weatherInfo = document.getElementById('weather-info');
 
-// Step 3: Add an event listener to the button to detect when it is clicked.
+// Step 3:
 searchButton.addEventListener('click', () => {
-  // Step 4: Get the value of the input field, which will be the city name
+  // Step 4:
   const city = cityInput.value;
   
   if (!city) {
@@ -16,19 +16,19 @@ searchButton.addEventListener('click', () => {
     return;
   }
 
-  // Step 5: Make an HTTP request to the OpenWeatherMap API to fetch the weather data
+  // Step 5:
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
 
   fetch(apiUrl)
     .then((response) => {
-      // Step 6: Error handling
+      // Step 6:
       if (!response.ok) {
         throw new Error('City not found or API error');
       }
       return response.json();
     })
     .then((data) => {
-      // Step 7: Update the weather info div with the weather details
+      // Step 7:
       const weatherDescription = data.weather[0].description;
       const temperatureKelvin = data.main.temp;
       const windSpeed = data.wind.speed;
