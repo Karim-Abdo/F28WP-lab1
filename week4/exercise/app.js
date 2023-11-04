@@ -48,6 +48,7 @@ searchButton.addEventListener('click', () => {
     .catch((error) => {
       weatherInfo.textContent = `Error: ${error.message}`;
     });
+});
 
 
 
