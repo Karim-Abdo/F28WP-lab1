@@ -6,9 +6,13 @@ btn.addEventListener("click", function(){
   var ourRequest = new XMLHttpRequest();
   ourRequest.open('GET', 'https://raw.githubusercontent.com/Karim-Abdo/F28WP-lab1/main/week4/parts1-4/cities1.json');
   ourRequest.onload = function() {
-    var ourData = JSON.parse(ourRequest.responseText);
-   renderHTML(ourData);
-   btn.classList.add("hide-me");
+   if (ourRequest.status >= 200 && ourRequest.status < 400) {
+      var ourData = JSON.parse(ourRequest.responseText);
+      renderHTML(ourData);
+      btn.classList.add("hide-me");
+    } else {
+      console.error("Failed to fetch data");
+    }
   };
   ourRequest.send();
   
