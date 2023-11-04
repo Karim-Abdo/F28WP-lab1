@@ -4,7 +4,7 @@ var btn = document.getElementById("btn");
 btn.addEventListener("click", function(){
 
   var ourRequest = new XMLHttpRequest();
-  ourRequest.open('GET', 'https://github.com/Karim-Abdo/F28WP-lab1/blob/main/week4/parts1-4/cities1.json');
+  ourRequest.open('GET', 'https://raw.githubusercontent.com/Karim-Abdo/F28WP-lab1/main/week4/parts1-4/cities1.json');
   ourRequest.onload = function() {
     var ourData = JSON.parse(ourRequest.responseText);
    renderHTML(ourData);
