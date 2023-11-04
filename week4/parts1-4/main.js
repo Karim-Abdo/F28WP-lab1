@@ -1,4 +1,3 @@
-https://github.com/Karim-Abdo/F28WP-lab1/blob/main/week4/parts1-4/cities1.json
 
 var cityContainer = document.getElementById("city-info");
 var btn = document.getElementById("btn");
